@@ -1,2 +1,1 @@
-#Github
-Git Course - Training
+#Git Course
