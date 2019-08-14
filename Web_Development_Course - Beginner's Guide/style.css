@@ -38,20 +38,45 @@ a {
 .trip-text {
     background-color: #fa923f;
     padding: 0;
+    display: flex;
 }
 .trip-text p {
-    background-color: white;
-    margin: 0;
-    display: inline-block;
-    width: 50%;
-}
-.feedback {
     background-color: #521751;
     color: white;
+    margin: 0;
     text-align: center;
+    width: 50%;
+    border: 1px solid red;
+}
+.trip-images {
+    display: flex;
+}
+.trip-images img {
+    width: 50%;
+    height: 100%;
+} 
+.feedback {
+    position: relative;
+    background-color: #521751;
+    color: white;
+    bottom: 18.4px;
+    text-align: center;
+    margin: 0;
 }
 /* footer */
-.review-clients p, .review-clients img {
-    display: inline;
-    vertical-align: middle;
+.review-clients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    background-color: white;
+    margin: 10px;
+}
+.review-clients img {
+    width: 15%;
+}
+.review-clients p {
+    widows: 350px;
+    text-align: center;
 }
