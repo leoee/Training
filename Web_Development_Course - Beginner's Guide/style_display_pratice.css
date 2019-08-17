@@ -1,0 +1,56 @@
+html {
+    background-color:  rgba(14, 146, 43, 0.877);;
+}
+p {
+    color: white;
+}
+body {
+    margin: 0;
+}
+header {
+    height: 70px;
+}
+header h1 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    color: black;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    z-index: 1;
+}
+aside {
+    float: left;
+    margin-top: 35px;
+    margin-left: 10px;
+    width: 60%;
+    z-index: 0;
+}
+aside img {
+    width: 100%;
+    height: 500px;
+}
+aside div{
+    position: relative;
+}
+aside div p {
+    position: absolute;
+    padding: 10px;
+}
+main {
+    float: right;
+    width: 30%;
+    display: grid;
+    margin-right: 10px;
+    grid-template-columns: 1fr;
+}
+main div {
+    position: relative;
+    padding: 20px; 
+}
+main div p {
+    position: absolute;
+    padding: 5px;
+}
