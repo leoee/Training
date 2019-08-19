@@ -10,6 +10,12 @@ a {
     text-decoration: none;
     color: black;
 }
+a:active {
+    color: #fa923f;
+}
+img:hover {
+    cursor: pointer;
+}
 /* header */
 .fixed-bar {
     height: 70px;
@@ -99,7 +105,7 @@ a {
         padding: 0;
         display: flex;
     }
-    
+
     .trip-text p {
         background-color: #521751;
         color: white;
