@@ -1,16 +1,19 @@
-let imageSanFrancisco = document.querySelector('.trip-image');
-let backdrop = document.querySelector('.backdrop');
-let modal = document.querySelector('.modal');
+var imageSanFrancisco = document.querySelectorAll('.trip-image');
+var backdrop = document.querySelector('.backdrop');
+var modal = document.querySelector('.modal');
 
 function openModal() {
     backdrop.style.display = 'block';
     modal.style.display = 'block';
 }
 
-function closeModal() {
+function closeModal () {
     backdrop.style.display = 'none';
     modal.style.display = 'none';
 }
 
-imageSanFrancisco.onclick  = openModal;
-backdrop.onclick = closeModal;
+for (i = 0; i < imageSanFrancisco.length; i++) {
+    imageSanFrancisco[i].addEventListener('click', openModal);
+}
+
+backdrop.addEventListener('click', closeModal);
