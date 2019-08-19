@@ -1,17 +1,19 @@
 html {
     background-color:  rgb(236, 236, 236);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 100%;
 }
 body {
     margin: 0;
 }
 a {
     text-decoration: none;
-    background-color: red;
     color: black;
 }
 /* header */
 .fixed-bar {
     height: 70px;
+    font-size: 2em;
 }
 .page-title {
     background-color: #521751;
@@ -23,16 +25,20 @@ a {
     padding: 10px 0;
     margin: 0;
     text-align: center;
+    font-size: 16px;
+    font-size: 2rem;
 }
 /* nav */
 .navigation {
     text-align: center;
     padding: 0;
 }
-.navigation li, .navigation a {
+.navigation li {
     display: inline-block;
+    width: 20%;
     background-color: rgb(177, 177, 174);
     width: 70px;
+    font-size: 1.3rem;
 }
 /* main */
 .trip-text {
@@ -47,6 +53,8 @@ a {
     text-align: center;
     width: 50%;
     border: 1px solid red;
+    font-size: 16px;
+    font-size: 1rem;
 }
 .trip-images {
     display: flex;
@@ -55,7 +63,6 @@ a {
 .trip-images img {
     width: 50%;
     min-width: 200px;
-    max-width: 500px;
     height: 100%;
 } 
 .feedback {
@@ -65,6 +72,8 @@ a {
     bottom: 18.4px;
     text-align: center;
     margin: 0;
+    font-size: 16px;
+    font-size: 1rem;
 }
 /* footer */
 .review-clients {
@@ -75,6 +84,8 @@ a {
     flex-wrap: wrap;
     background-color: white;
     margin: 10px;
+    font-size: 16px;
+    font-size: 1rem;
 }
 .review-clients img {
     width: 15%;
