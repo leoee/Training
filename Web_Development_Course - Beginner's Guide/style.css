@@ -50,9 +50,12 @@ a {
 }
 .trip-images {
     display: flex;
+    flex-wrap: wrap;
 }
 .trip-images img {
     width: 50%;
+    min-width: 200px;
+    max-width: 500px;
     height: 100%;
 } 
 .feedback {
