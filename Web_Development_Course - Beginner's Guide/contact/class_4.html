@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
         <title>Title</title>
         <link rel="shortcut icon" href="../Images/favicon.png">
         <link rel="stylesheet" href="../style.css">
@@ -19,5 +20,32 @@
                 <li>Contact</li>
             </ul>
         </nav>
+        <main>
+            <form class="form">
+                <label for="input-name">Name</label>
+                <input type="text"
+                       name="name"
+                       class="form-input"
+                       id="input-name"
+                       oninput="checkInput()">
+                <label for="input-mail">Mail</label>
+                <input type="text"
+                       name="email"
+                       class="form-input"
+                       id="input-mail"
+                       oninput="checkInput()">
+                <label for="input-message">Message</label>
+                <textarea name="message"
+                          class="form-input-message"
+                          id="input-message" 
+                          cols="30" 
+                          rows="10"
+                          oninput="checkInput()">
+                </textarea>
+                <button class="submit-button" 
+                        disabled>Submit</button>
+            </form>
+        </main>
+        <script src="main.js"></script>
     </body>
 </html>

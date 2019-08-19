@@ -131,7 +131,47 @@ img:hover {
     widows: 350px;
     text-align: center;
 }
+.form-input:hover {
+    background: rgb(228, 226, 226);
+}
 
+.form-input:focus, 
+.form-button {
+    outline: none;
+    cursor: pointer;
+}
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0px auto;
+    margin-left: 10px;
+}
+.form-input {
+    background: white;
+    border: 1px solid black;
+    width: 50%;
+    padding: 3px;
+}
+.form-input-message {
+    width: 50%;
+}
+.submit-button {
+    margin-top: 5px;
+    margin-left: 100px;
+    width: 30%;
+    padding: 5px;
+    background: #979695;
+    color: white;
+}
+.submit-button:active,
+.submit-button:hover {
+    cursor: pointer;
+}
+
+.submit-button:focus {
+    outline: none;
+}
 @media (min-width: 400px){
     .navigation li {
         font-size: 1.2rem;
