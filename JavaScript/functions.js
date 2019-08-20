@@ -38,11 +38,20 @@ let calcularPreco = function (produto, formulaImposto) {
 console.log(calcularPreco(produto, formulaA));
 console.log(calcularPreco(produto, formulaB));*/
 
-var helloWorld = function () {
+/*var helloWorld = function () {
     return function () {
         return "Hello World!"
     };
 };
 
 console.log(helloWorld);
-console.log(helloWorld()());
+console.log(helloWorld()());*/
+
+let pessoa = {
+    nome: "Leo",
+    idade: 22,
+    getIdade: function () {
+        return this.idade;
+    }
+};
+console.log(pessoa.getIdade());
