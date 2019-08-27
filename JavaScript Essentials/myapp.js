@@ -145,7 +145,7 @@ let apple1 = new Apple(10, 20, 'red', 200);
 let apple2 = new Apple(100, 200, 'green', 50);*/
 
 // Constructors with Prototype
-function Apple (color, weight) {
+/*function Apple (color, weight) {
     this.color = color;
     this.weight = weight;
 }
@@ -160,4 +160,28 @@ Apple.prototype = {
 };
 
 let apple1 = new Apple('red', 99);
-let apple2 = new Apple('green', 109);
+let apple2 = new Apple('green', 109);*/
+
+// Changing elements content's
+/*let text = document.getElementById('hello');
+
+text.innerText = "new world";
+
+text.innerHTML += "<span> <h2> order </h2> </span>";*/
+
+// Changing element style's
+let element = document.getElementById("style");
+
+/*element.style.display = 'grid';
+element.style.gridTemplateColumns = '1fr 2fr';*/
+
+element.style.display = "inline-flex";
+element.style.backgroundColor = "red";
+
+//element.style.cssText = "display: inline-flex; background: blue";
+
+element.addEventListener ('click', (event) => {
+    console.log('teste');
+});
+
+//element.removeEventListener ('click', function);
