@@ -17,3 +17,11 @@ button.addEventListener('click', () => {
     }
 
 });
+
+button.addEventListener('mouseenter', () => {
+    button.style.background = 'red';
+});
+
+button.addEventListener('mouseleave', () => {
+    button.style.background = "";
+});

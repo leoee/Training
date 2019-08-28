@@ -1,0 +1,22 @@
+table, td {
+    border: 5px solid black;
+}
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: blue;
+}
+div p {
+    display: flex;
+    justify-content: center;
+}
+.table {
+    display: flex;
+    justify-content: center;
+}
+.div-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
