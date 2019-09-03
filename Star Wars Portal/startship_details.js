@@ -16,15 +16,14 @@ let textPilots = document.getElementById('pilots');
 //h1.style.color = 'white';
 h1.innerHTML = name;
 
-async function searchPeople(link, last) {
+function searchPeople(link, index) {
     console.log(link);
     fetch(link)
         .then(result => result.json())
         .then(response => {
-            if (last === false)
-                textPilots.textContent += response.name + ", ";
-            else
-                textPilots.textContent += response.name;
+            if(index > 0)
+                textPilots.textContent += ", ";
+            textPilots.textContent += response.name;
         })
         .catch(err => console.log(err));
 }
@@ -63,10 +62,7 @@ async function searchStarshipDetails() {
     }
 
     for (let i = 0; i < data.pilots.length; i++) {
-        if (i == data.pilots.length - 1)
-            searchPeople(data.pilots[i], true);
-        else
-            searchPeople(data.pilots[i], false);
+        searchPeople(data.pilots[i], i);
     }
 }
 
