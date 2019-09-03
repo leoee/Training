@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+.characters { 
+    display: block;
+    margin: 10px 100px;
+}
+
+.startships {
+    display: block;
+    margin: 10px 100px;
+}

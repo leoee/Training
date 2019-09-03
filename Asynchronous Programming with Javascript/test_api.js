@@ -93,6 +93,7 @@ async function searchAllPeople() {
     }
 }
 
+
 searchAllMovies();
 searchAllPeople();
 searchAllStarships();
