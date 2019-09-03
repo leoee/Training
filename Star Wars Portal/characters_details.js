@@ -18,7 +18,7 @@ let textVehicles = document.getElementById('vehicles');
 
 h1.textContent = name;
 
-function searchData(link, type, last) {
+function searchData(link, type) {
     console.log(link);
     fetch(link)
         .then(result => result.json())
@@ -27,17 +27,16 @@ function searchData(link, type, last) {
                 textFilms.textContent += response.title + "; ";
             }
             else if (type == 2)
-                textSpecies.textContent += response.title + "; ";
+                textSpecies.textContent += response.name + "; ";
             else if (type == 3)
-                textStarships.textContent += response.title + "; ";
+                textStarships.textContent += response.name + "; ";
             else if (type == 4)
-                textVehicles.textContent += response.title + "; ";
+                textVehicles.textContent += response.name + "; ";
         })
         .catch(err => console.log(err));
 }
 
 async function searchCharacterDetails() {
-    console.log('teste')
     status = false;
     let next = "https://swapi.co/api/people/";
 
@@ -70,30 +69,30 @@ async function searchCharacterDetails() {
 
     for (let i = 0; i < data.films.length; i++) {
         if (i == data.films.length - 1)
-            searchData(data.films[i], 1, true);
+            searchData(data.films[i], 1);
         else
-            searchData(data.films[i], 1, false);
+            searchData(data.films[i], 1);
     }
 
     for (let i = 0; i < data.species.length; i++) {
         if (i == data.species.length - 1)
-            searchData(data.species[i], 2, true);
+            searchData(data.species[i], 2);
         else
-            searchData(data.species[i], 2, false);
+            searchData(data.species[i], 2);
     }
 
     for (let i = 0; i < data.starships.length; i++) {
         if (i == data.starships.length - 1)
-            searchData(data.starships[i], 3, true);
+            searchData(data.starships[i], 3);
         else
-            searchData(data.starships[i], 3, false);
+            searchData(data.starships[i], 3);
     }
 
     for (let i = 0; i < data.vehicles.length; i++) {
         if (i == data.vehicles.length - 1)
-            searchData(data.vehicles[i], 4, true);
+            searchData(data.vehicles[i], 4);
         else
-            searchData(data.vehicles[i], 4, false);
+            searchData(data.vehicles[i], 4);
     }
 
 }
