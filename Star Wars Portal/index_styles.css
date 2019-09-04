@@ -8,11 +8,18 @@ body {
     display: block;
     margin: 10px 100px;
 }
+.characters h1:first-child {
+    color: yellow;
+}
 
 .startships {
     color: white;
     display: block;
     margin: 10px 100px;
+}
+
+.startships h1:first-child {
+    color: yellow;
 }
 .div_filter {
     display: inline;

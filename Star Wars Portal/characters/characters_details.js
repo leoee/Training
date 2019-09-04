@@ -79,6 +79,8 @@ async function searchCharacterDetails() {
         textStarships.textContent = "-";
     if (data.vehicles.length == 0)
         textVehicles.textContent = "-";
+    if (data.species.length == 0)
+        textSpecies.textContent = "-";
 
     for (let i = 0; i < data.films.length; i++) {
         if (i == data.films.length - 1)
