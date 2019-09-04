@@ -1,6 +1,3 @@
-document.body.style.backgroundImage = "url('../images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
-
-
 let name = sessionStorage.getItem('name');
 let data;
 let status = false;
@@ -17,13 +14,11 @@ let textPassenger = document.getElementById('passengers');
 let textPilots = document.getElementById('pilots');
 
 
-h1.style.color = 'white';
-h1.innerHTML = name;
-
 button.addEventListener('click', function () {
     window.location.href = '../index.html';
-})
+});
 
+// Search peoples from link
 function searchPeople(link) {
     console.log(link);
     fetch(link)
@@ -34,6 +29,7 @@ function searchPeople(link) {
         .catch(err => console.log(err));
 }
 
+// Search starships details
 async function searchStarshipDetails() {
     status = false;
     let list = document.getElementById('listStarships');
@@ -63,6 +59,7 @@ async function searchStarshipDetails() {
     textMaxSpeed.textContent = data.max_atmosphering_speed;
     textPassenger.textContent = data.passengers;
 
+    // if film vector is empty, it set with "-"
     if (data.pilots.length == 0) {
         textPilots.textContent = "-";
     }
@@ -72,4 +69,13 @@ async function searchStarshipDetails() {
     }
 }
 
-searchStarshipDetails();
+function setUp() {
+    document.body.style.backgroundImage = "url('../images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
+    h1.style.color = 'white';
+    h1.innerHTML = name;
+
+    searchStarshipDetails();
+}
+
+setUp();
+

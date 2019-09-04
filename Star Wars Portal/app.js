@@ -7,8 +7,29 @@ let radioStar = document.getElementById('radio_starship');
 let startships = [];
 let characters = [];
 
-document.body.style.backgroundImage = "url('images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
+text.addEventListener('input', function (evt) {
+    if (radioChar.checked == true) {
+        filterCharacters(this.value);
+    }
+    else if (radioStar.checked == true) {
+        filterStarship(this.value);
+    }
+});
 
+// When someone click at the radio button after entering text it need to reset the other list
+radioStar.addEventListener('click', function () {
+    filterStarship(text.value);
+    filterCharacters("");
+});
+
+radioChar.addEventListener('click', function () {
+    filterCharacters(text.value);
+    filterStarship("");
+});
+
+
+// Filter all characters from name
+// Send "" to reset the list
 function filterCharacters(name) {
 
     let first = listPeople.firstElementChild;
@@ -40,6 +61,9 @@ function filterCharacters(name) {
         }
     });
 }
+
+// Filter all starships from name
+// Send "" to reset the list
 function filterStarship(name) {
 
     let first = listStarships.firstElementChild;
@@ -73,26 +97,6 @@ function filterStarship(name) {
 
     });
 }
-
-
-text.addEventListener('input', function (evt) {
-    if (radioChar.checked == true) {
-        filterCharacters(this.value);
-    }
-    else if (radioStar.checked == true) {
-        filterStarship(this.value);
-    }
-});
-
-radioStar.addEventListener('click', function () {
-    filterStarship(text.value);
-    filterCharacters("");
-});
-
-radioChar.addEventListener('click', function () {
-    filterCharacters(text.value);
-    filterStarship("");
-});
 
 async function searchAllStarships() {
     let next = "https://swapi.co/api/starships/";
@@ -154,11 +158,18 @@ async function searchAllPeople() {
             li.addEventListener('click', function () {
                 let data = event.path[0].innerText;
                 sessionStorage.setItem('name', data);
-                window.location = "characters/characters_details.html";
+                window.location.href = "characters/characters_details.html";
             });
         }
         next = response.next;
     }
 }
-searchAllStarships();
-searchAllPeople();
+
+function setUp() {
+    document.body.style.backgroundImage = "url('images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
+
+    searchAllStarships();
+    searchAllPeople();
+}
+
+setUp();

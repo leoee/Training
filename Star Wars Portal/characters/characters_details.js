@@ -3,10 +3,6 @@ let h1 = document.getElementById('peopleName');
 let data;
 let status = false;
 
-document.body.style.backgroundImage = "url('../images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
-h1.style.color = 'white';
-h1.innerHTML = name;
-
 let button = document.getElementById('btnBack');
 let textName = document.getElementById('name');
 let textHeight = document.getElementById('height');
@@ -21,12 +17,17 @@ let textSpecies = document.getElementById('species');
 let textStarships = document.getElementById('starships');
 let textVehicles = document.getElementById('vehicles');
 
-h1.textContent = name;
+
 
 button.addEventListener('click', function () {
     window.location.href = '../index.html';
 });
 
+// Search data from link
+// Type = 1 -> Films
+// Type = 2 -> Species
+// Type = 3 -> Starships
+// Type = 4 -> Vechicles
 function searchData(link, type) {
     console.log(link);
     fetch(link)
@@ -45,6 +46,7 @@ function searchData(link, type) {
         .catch(err => console.log(err));
 }
 
+// Load details about some character and set the texts into page
 async function searchCharacterDetails() {
     status = false;
     let next = "https://swapi.co/api/people/";
@@ -64,6 +66,7 @@ async function searchCharacterDetails() {
             break;
         next = response.next;
     }
+
     textName.textContent = data.name;
     textHeight.textContent = data.height;
     textMass.textContent = data.mass;
@@ -73,6 +76,7 @@ async function searchCharacterDetails() {
     textBirthYear.textContent = data.birth_year;
     textGender.textContent = data.gender;
 
+    // if some vector is empty, it set with "-"
     if (data.films.length == 0)
         textFilms.textContent = "-";
     if (data.starships.length == 0)
@@ -83,33 +87,30 @@ async function searchCharacterDetails() {
         textSpecies.textContent = "-";
 
     for (let i = 0; i < data.films.length; i++) {
-        if (i == data.films.length - 1)
-            searchData(data.films[i], 1);
-        else
-            searchData(data.films[i], 1);
+        searchData(data.films[i], 1);
     }
 
     for (let i = 0; i < data.species.length; i++) {
-        if (i == data.species.length - 1)
-            searchData(data.species[i], 2);
-        else
-            searchData(data.species[i], 2);
+        searchData(data.species[i], 2);
     }
 
     for (let i = 0; i < data.starships.length; i++) {
-        if (i == data.starships.length - 1)
-            searchData(data.starships[i], 3);
-        else
-            searchData(data.starships[i], 3);
+        searchData(data.starships[i], 3);
     }
 
     for (let i = 0; i < data.vehicles.length; i++) {
-        if (i == data.vehicles.length - 1)
-            searchData(data.vehicles[i], 4);
-        else
-            searchData(data.vehicles[i], 4);
+        searchData(data.vehicles[i], 4);
     }
 
 }
 
-searchCharacterDetails();
+function setUp() {
+    document.body.style.backgroundImage = "url('../images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
+    h1.style.color = 'white';
+    h1.textContent = name;
+    h1.innerHTML = name;
+    
+    searchCharacterDetails();
+}
+setUp();
+
