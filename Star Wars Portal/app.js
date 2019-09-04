@@ -35,7 +35,7 @@ function filterCharacters(name) {
             li.addEventListener('click', function () {
                 let data = event.path[0].innerText;
                 sessionStorage.setItem('name', data);
-                window.location.href = "characters/character_details.html";
+                window.location.href = "characters/characters_details.html";
             });
         }
     });
@@ -85,11 +85,13 @@ text.addEventListener('input', function (evt) {
 });
 
 radioStar.addEventListener('click', function () {
-    filterStarship(this.value);
+    filterStarship(text.value);
+    filterCharacters("");
 });
 
 radioChar.addEventListener('click', function () {
     filterCharacters(text.value);
+    filterStarship("");
 });
 
 async function searchAllStarships() {

@@ -24,7 +24,7 @@ let textVehicles = document.getElementById('vehicles');
 h1.textContent = name;
 
 button.addEventListener('click', function () {
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 });
 
 function searchData(link, type) {
@@ -64,9 +64,6 @@ async function searchCharacterDetails() {
             break;
         next = response.next;
     }
-
-    console.log(data);
-
     textName.textContent = data.name;
     textHeight.textContent = data.height;
     textMass.textContent = data.mass;
