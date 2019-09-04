@@ -5,20 +5,28 @@
 }
 
 .div_table { 
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 table, th, td {
+    color: white;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 td {
     padding: 4px;
 }
 table tr td:first-child {
+    color: yellow;
     font-weight: bold;
+}
+.div_button { 
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
 }

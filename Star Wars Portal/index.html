@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="index_styles.css">
-    </head>
-    <body id="main">
-        <div class="characters">
-            <h1> List of Characters </h3>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index_styles.css">
+</head>
+
+<body id="main">
+    <div class="div_filter">
+        <p>Filter</p>
+        <input id="filter_input" type="text">
+        <div>
+            <form class="div_filter_radio" action="">
+                <input id="radio_char" type="radio" name="gender" value="male"> Characters<br>
+                <input id="radio_starship" type="radio" name="gender" value="female"> Startships<br>
+            </form>
+        </div>
+    </div>
+    <div class="characters">
+        <h1> List of Characters </h3>
             <ul id="listPeople"></ul>
-        </div>
-        
-        <div class="startships">
-            <h1>List of Starships</h3>
+    </div>
+
+    <div class="startships">
+        <h1>List of Starships</h3>
             <ul id="listStarships"></ul>
-        </div>
+    </div>
 
 
-        <script src="app.js"></script> 
-    </body>
+    <script src="app.js"></script>
+</body>
+
 </html>

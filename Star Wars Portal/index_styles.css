@@ -1,13 +1,26 @@
+
 body {
     display: flex;
     justify-content: center;
 }
 .characters { 
+    color: white;
     display: block;
     margin: 10px 100px;
 }
 
 .startships {
+    color: white;
     display: block;
     margin: 10px 100px;
+}
+.div_filter {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.div_filter_radio {
+    display: flex;
+    margin-top: 10px;
 }

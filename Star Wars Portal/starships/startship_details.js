@@ -1,8 +1,12 @@
+document.body.style.backgroundImage = "url('../images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
+
+
 let name = sessionStorage.getItem('name');
-let h1 = document.getElementById('starshipName');
 let data;
 let status = false;
 
+let button = document.getElementById('button');
+let h1 = document.getElementById('starshipName');
 let textName = document.getElementById('name');
 let textModel = document.getElementById('model');
 let textManufacturer = document.getElementById('manufacturer');
@@ -11,19 +15,21 @@ let textLength = document.getElementById('length');
 let textMaxSpeed = document.getElementById('max_atmosphering_speed');
 let textPassenger = document.getElementById('passengers');
 let textPilots = document.getElementById('pilots');
-//background-image: url('images/d9ece2516f1ff9e56b73729a748d08c9.jpg');
 
-//h1.style.color = 'white';
+
+h1.style.color = 'white';
 h1.innerHTML = name;
 
-function searchPeople(link, index) {
+button.addEventListener('click', function () {
+    window.location.href = '../index.html';
+})
+
+function searchPeople(link) {
     console.log(link);
     fetch(link)
         .then(result => result.json())
         .then(response => {
-            if(index > 0)
-                textPilots.textContent += ", ";
-            textPilots.textContent += response.name;
+            textPilots.textContent += response.name + "; ";
         })
         .catch(err => console.log(err));
 }
@@ -62,7 +68,7 @@ async function searchStarshipDetails() {
     }
 
     for (let i = 0; i < data.pilots.length; i++) {
-        searchPeople(data.pilots[i], i);
+        searchPeople(data.pilots[i]);
     }
 }
 

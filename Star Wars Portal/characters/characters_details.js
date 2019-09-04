@@ -3,6 +3,11 @@ let h1 = document.getElementById('peopleName');
 let data;
 let status = false;
 
+document.body.style.backgroundImage = "url('../images/d9ece2516f1ff9e56b73729a748d08c9.jpg')";
+h1.style.color = 'white';
+h1.innerHTML = name;
+
+let button = document.getElementById('btnBack');
 let textName = document.getElementById('name');
 let textHeight = document.getElementById('height');
 let textMass = document.getElementById('mass');
@@ -17,6 +22,10 @@ let textStarships = document.getElementById('starships');
 let textVehicles = document.getElementById('vehicles');
 
 h1.textContent = name;
+
+button.addEventListener('click', function () {
+    window.location.href = 'index.html';
+});
 
 function searchData(link, type) {
     console.log(link);
@@ -66,6 +75,13 @@ async function searchCharacterDetails() {
     textEyeColor.textContent = data.eye_color;
     textBirthYear.textContent = data.birth_year;
     textGender.textContent = data.gender;
+
+    if (data.films.length == 0)
+        textFilms.textContent = "-";
+    if (data.starships.length == 0)
+        textStarships.textContent = "-";
+    if (data.vehicles.length == 0)
+        textVehicles.textContent = "-";
 
     for (let i = 0; i < data.films.length; i++) {
         if (i == data.films.length - 1)
